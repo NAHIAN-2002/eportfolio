@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Md. Tahsin Ahmed Niloy – E-Portfolio</title>
+<style>
+:root{
+  --black:#0a0f1f;--navy:#0b2a6f;--blue:#1d4ed8;--sky:#60a5fa;--ice:#bfdbfe;--pale:#e8f1ff;--mist:#f5f9ff;--mute:#4a5878;--line:#d3e1f8;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--black);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--black);z-index:10}
+a{color:var(--blue);font-weight:600}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.ribbon{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--black);color:#fff;border-bottom:3px solid var(--blue)}
+.rib-in{max-width:1080px;margin:0 auto;padding:12px 6vw;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;font-weight:700;margin-right:auto;line-height:1.15}
+.brand small{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:400;font-size:.74rem;color:var(--ice);letter-spacing:.04em}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#fff;padding:8px 16px;border-radius:999px;font-weight:600;font-size:.93rem;transition:.15s}
+nav a:hover{background:rgba(96,165,250,.25)}
+nav a[aria-current="page"]{background:var(--blue)}
+main{max-width:1080px;margin:0 auto;padding:46px 6vw 70px}
+.page[hidden]{display:none}
+.kicker{color:var(--blue);margin:0 0 14px;font-weight:700}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;margin:0 0 22px;font-weight:700;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--blue)}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.1;margin:0 0 22px;display:inline-block;background:linear-gradient(transparent 62%,var(--ice) 62%);padding:0 6px}
+h3{display:inline-block;margin:42px 0 6px;padding:5px 14px;border-radius:999px;background:var(--black);color:#fff}
+.lead{font-size:1.1rem;max-width:62ch}
+.top{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:start}
+.photo{aspect-ratio:4/5;border:3px dashed var(--blue);border-radius:16px;background:var(--pale);display:grid;place-content:center;text-align:center;color:var(--blue);padding:12px;transform:rotate(2deg);box-shadow:7px 7px 0 var(--ice)}
+.vid{margin-top:44px}
+.slot{aspect-ratio:16/9;width:100%;border:3px solid var(--black);border-radius:18px;background:var(--pale);display:grid;place-content:center;text-align:center;padding:20px;margin-top:12px;box-shadow:8px 8px 0 var(--blue);overflow:hidden}
+.slot iframe,.slot video{width:100%;height:100%;border:0}
+.tri{width:0;height:0;border-left:28px solid var(--blue);border-top:17px solid transparent;border-bottom:17px solid transparent;margin:0 auto 12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:50px 0 24px}
+.tile{border-radius:16px;padding:20px}
+.tile b{display:block;font-family:Georgia,serif;font-size:1.7rem;line-height:1.15}
+.tile span{font-size:.92rem;opacity:.9}
+.t1{background:var(--black);color:#fff}.t2{background:var(--blue);color:#fff}.t3{background:var(--sky);color:var(--black)}.t4{background:var(--ice);color:var(--black)}
+.socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:14px}
+.soc{display:flex;flex-direction:column;gap:2px;text-decoration:none;border-radius:16px;padding:18px 20px;font-size:1.15rem;font-weight:700;transition:.15s}
+.soc span{float:right}
+.soc small{font-weight:500;font-size:.85rem;opacity:.85}
+.soc:hover{transform:translateY(-3px)}
+.s1{background:var(--black);color:#fff}.s2{background:var(--blue);color:#fff}.s3{background:var(--sky);color:var(--black)}.s4{background:var(--ice);color:var(--black)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.row>.l{color:var(--blue);font-weight:700}
+.row ul{margin:0;padding-left:18px}.row li{margin:4px 0}
+.edu{display:grid;grid-template-columns:76px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.logo{width:76px;height:76px;display:block}
+.logo rect{rx:16px}
+.logo text{font-family:Georgia,serif;font-weight:700}
+.edu:nth-of-type(1) .logo rect{fill:var(--black)}.edu:nth-of-type(1) .logo text{fill:#fff}
+.edu:nth-of-type(2) .logo rect{fill:var(--blue)}.edu:nth-of-type(2) .logo text{fill:#fff}
+.edu:nth-of-type(3) .logo rect{fill:var(--sky)}.edu:nth-of-type(3) .logo text{fill:var(--black)}
+.edu h4{margin:0;font-size:1.12rem}
+.edu .d{color:var(--mute);font-size:.94rem}
+.ph{background:var(--pale);color:var(--navy);border:1px dashed var(--blue);border-radius:6px;padding:1px 7px;font-size:.86rem;font-weight:700}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:24px}
+.pcard{background:#fff;border:2px solid var(--black);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.15s}
+.pcard:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--blue)}
+.pimg{aspect-ratio:16/10;background:var(--pale);border-bottom:2px solid var(--black);display:grid;place-content:center;text-align:center;color:var(--blue);padding:12px}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.pbody{padding:18px 20px 22px}
+.pbody .n{display:inline-block;background:var(--black);color:#fff;border-radius:999px;padding:2px 12px;font-size:.78rem;margin-bottom:8px}
+.pcard:nth-of-type(2) .n{background:var(--blue)}.pcard:nth-of-type(3) .n{background:var(--sky);color:var(--black)}
+.pbody h4{margin:0 0 8px;font-size:1.15rem}
+.pbody p{margin:4px 0;font-size:.95rem}
+.btn{display:inline-block;margin-top:26px;border-radius:12px;padding:12px 22px;font-weight:700;text-decoration:none;background:var(--blue);color:#fff;border:0;cursor:pointer;font-size:1rem;transition:.15s}
+.btn:hover{background:var(--black)}
+footer{margin-top:60px;color:var(--mute);font-size:.85rem}
+@media (max-width:760px){
+  .rib-in{gap:10px;padding:10px 5vw}
+  nav{flex-wrap:nowrap;overflow-x:auto;width:100%}
+  nav a{white-space:nowrap}
+  main{padding:30px 5vw 60px}
+  .top{grid-template-columns:1fr}.photo{max-width:200px}
+  .row{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{.ribbon,.noprint,footer,body::before{display:none!important}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header class="ribbon"><div class="rib-in">
+  <div class="brand">Md. Tahsin Ahmed Niloy<small>Computer Science and Engineering student, AIUB</small></div>
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#resume">Resume</a>
+    <a href="#skills">Skills &amp; Activities</a>
+    <a href="#projects">Projects</a>
+  </nav>
+</div></header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="page" id="p-home">
+  <p class="kicker mono">01 — Home</p>
+  <div class="top">
+    <div>
+      <h1>Hi, I’m <em>Md. Tahsin Ahmed Niloy</em></h1>
+      <p class="lead">I’m a Computer Science and Engineering student at American International University-Bangladesh (AIUB), expected to graduate in 2027 with a current CGPA of 3.98/4.00. I’ve made the Dean’s List (Fall 2024–2025), received the AIUB Academic Scholarship for six consecutive semesters, and became both University Champion and National Champion in Microsoft Office Specialist (MOS) PowerPoint 2025. Beyond academics, I organize the AIUB English Club and hold a black belt in Taekwondo. I bring strong analytical and problem-solving skills, clear communication, and a commitment to teamwork and leadership. <span class="ph">[PLACEHOLDER: one sentence on your area of interest or goal]</span></p>
+    </div>
+    <!-- To add your photo, replace the div below with: <img src="photo.jpg" alt="Md. Tahsin Ahmed Niloy" style="width:100%;aspect-ratio:4/5;object-fit:cover"> -->
+    <div class="photo mono">Photo<br>[PLACEHOLDER]</div>
+  </div>
+
+  <div class="vid">
+    <p class="mono" style="margin:0">Video introduction · 1–2 min</p>
+    <!--
+      TO ADD YOUR VIDEO LATER, replace everything inside the div below with ONE of these:
+      YouTube:       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      Google Drive:  <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID/preview" allowfullscreen></iframe>
+      Your own file: <video src="intro.mp4" controls></video>
+    -->
+    <div class="slot"><div><div class="tri"></div><b>Video coming soon</b><br><span class="ph">[PLACEHOLDER: your video introduction]</span></div></div>
+  </div>
+
+  <div class="tiles">
+    <div class="tile t1"><b>3.98 / 4.00</b><span>Current CGPA at AIUB</span></div>
+    <div class="tile t2"><b>6 semesters</b><span>AIUB Academic Scholarship, consecutive</span></div>
+    <div class="tile t3"><b>National Champion</b><span>MOS PowerPoint 2025</span></div>
+    <div class="tile t4"><b>2027</b><span>Expected graduation</span></div>
+  </div>
+  <p><b>Contact:</b> Dhaka, Bangladesh · <a href="mailto:mdtahsinniloy004@gmail.com">mdtahsinniloy004@gmail.com</a></p>
+<h3 class="mono">Socials</h3>
+  <div class="socials">
+    <a class="soc s1" href="https://github.com/NAHIAN-2002" target="_blank" rel="noopener">GitHub <span>↗</span><small>github.com/NAHIAN-2002</small></a>
+    <a class="soc s2" href="https://www.linkedin.com/in/md-tahsin-ahmed-niloy/" target="_blank" rel="noopener">LinkedIn <span>↗</span><small>linkedin.com/in/md-tahsin-ahmed-niloy</small></a>
+    <a class="soc s3" href="mailto:mdtahsinniloy004@gmail.com">Gmail <span>✉</span><small>mdtahsinniloy004@gmail.com</small></a>
+    <a class="soc s4" href="mailto:23-53321-3@student.aiub.edu">Outlook <span>✉</span><small>23-53321-3@student.aiub.edu</small></a>
+  </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section class="page" id="p-resume" hidden>
+  <p class="kicker mono">02 — Resume</p>
+  <h2>Resume</h2>
+  <p>Md. Tahsin Ahmed Niloy · Dhaka, Bangladesh · <a href="mailto:mdtahsinniloy004@gmail.com">mdtahsinniloy004@gmail.com</a><br>
+  <a href="https://www.linkedin.com/in/md-tahsin-ahmed-niloy/" target="_blank" rel="noopener">linkedin.com/in/md-tahsin-ahmed-niloy</a> · <a href="https://github.com/NAHIAN-2002" target="_blank" rel="noopener">github.com/NAHIAN-2002</a></p>
+  <button class="btn noprint" id="print" style="margin-top:6px">Save as PDF / Print</button>
+
+  <h3 class="mono">Education</h3>
+  <!-- LOGOS: to use a real logo, replace each <svg class="logo">…</svg> with <img class="logo" src="aiub-logo.png" alt="AIUB logo"> -->
+  <div class="edu">
+    <svg class="logo" viewBox="0 0 72 72" role="img" aria-label="AIUB logo placeholder"><rect width="72" height="72"/><text x="36" y="43" text-anchor="middle" font-size="19">AIUB</text></svg>
+    <div><h4>American International University-Bangladesh (AIUB)</h4>
+      <div class="d">Bachelor of Science in Computer Science and Engineering · 2023 – Present</div>
+      <div>Current CGPA: 3.98/4.00 · Expected graduation: 2027</div></div>
+  </div>
+  <div class="edu">
+    <svg class="logo" viewBox="0 0 72 72" role="img" aria-label="St. Joseph Higher Secondary School logo placeholder"><rect width="72" height="72"/><text x="36" y="45" text-anchor="middle" font-size="26">SJ</text></svg>
+    <div><h4>St. Joseph Higher Secondary School</h4>
+      <div class="d">Higher Secondary Certificate (Science), Dhaka Board · 2022</div><div>GPA: 5.00</div></div>
+  </div>
+  <div class="edu">
+    <svg class="logo" viewBox="0 0 72 72" role="img" aria-label="Annada Government High School logo placeholder"><rect width="72" height="72"/><text x="36" y="45" text-anchor="middle" font-size="26">AG</text></svg>
+    <div><h4>Annada Government High School, Brahmanbaria</h4>
+      <div class="d">Secondary School Certificate (Science), Cumilla Board · 2020</div><div>GPA: 5.00</div></div>
+  </div>
+
+  <h3 class="mono">Achievements</h3>
+  <div class="row"><div class="l mono">Awards</div><ul>
+    <li>Microsoft Office Specialist (MOS) PowerPoint 2025: University Champion and National Champion</li>
+    <li>Dean’s List Honor Award, Fall 2024–2025 Semester</li>
+    <li>AIUB Academic Scholarship for Regular Students, six consecutive semesters</li>
+    <li>14th place, Intra AIUB Programming Contest 2024 (Junior Category)</li></ul></div>
+
+  <h3 class="mono">Leadership &amp; Extracurricular Activities</h3>
+  <div class="row"><div class="l mono">Roles</div><ul>
+    <li>Organizer, AIUB English Club</li>
+    <li>Former Joint Secretary, Josephite Math Club</li>
+    <li>Former Cadet, Bangladesh National Cadet Corps (BNCC), Junior Division</li>
+    <li>Former Member, Bangladesh Scouts, Junior Level</li>
+    <li>Black Belt in Taekwondo</li></ul></div>
+
+  <h3 class="mono">Skills</h3>
+  <div class="row"><div class="l mono">Skills</div><ul>
+    <li>Fluent in Bangla and English</li>
+    <li>Excellent verbal and written communication</li>
+    <li>Advanced computer proficiency</li>
+    <li>Proficient in Microsoft Office (Word, Excel, PowerPoint)</li>
+    <li>Leadership and teamwork</li>
+    <li>Strong analytical and problem-solving skills</li>
+    <li>Quick learner with excellent adaptability</li>
+    <li><span class="ph">[PLACEHOLDER: technical skills such as programming languages and tools]</span></li></ul></div>
+
+  <h3 class="mono">Relevant Courses</h3>
+  <div class="row"><div class="l mono">Courses</div><div><span class="ph">[PLACEHOLDER: relevant CSE courses you have taken]</span></div></div>
+
+  <h3 class="mono">Projects &amp; Experience</h3>
+  <div class="row"><div class="l mono">Work</div><div>Projects are on the <a href="#projects">Projects page</a>. <span class="ph">[PLACEHOLDER: internships or work experience]</span></div></div>
+</section>
+
+<!-- ============ SKILLS & ACTIVITIES ============ -->
+<section class="page" id="p-skills" hidden>
+  <p class="kicker mono">03 — Skills &amp; Activities</p>
+  <h2>Skills &amp; Activities</h2>
+  <div style="border-top:2px solid var(--rule)">
+    <div class="row"><div class="l mono">Technical</div><div>
+      <ul><li>Advanced computer proficiency</li><li>Microsoft Word, Excel and PowerPoint (MOS PowerPoint 2025 University and National Champion)</li><li>14th place, Intra AIUB Programming Contest 2024 (Junior Category)</li><li><span class="ph">[PLACEHOLDER: programming languages, frameworks, tools]</span></li></ul></div></div>
+    <div class="row"><div class="l mono">Communication</div><div>
+      <ul><li>Fluent in Bangla and English</li><li>Excellent verbal and written communication</li><li>Organizer, AIUB English Club</li></ul></div></div>
+    <div class="row"><div class="l mono">Leadership &amp; teamwork</div><div>
+      <ul><li>Organizer, AIUB English Club</li><li>Former Joint Secretary, Josephite Math Club</li><li>Former Cadet, Bangladesh National Cadet Corps (BNCC), Junior Division</li><li>Former Member, Bangladesh Scouts, Junior Level</li></ul></div></div>
+    <div class="row"><div class="l mono">Personal strengths</div><div>
+      <ul><li>Strong analytical and problem-solving skills</li><li>Quick learner with excellent adaptability</li></ul></div></div>
+    <div class="row"><div class="l mono">Co-curricular</div><div>
+      <ul><li>AIUB English Club (Organizer)</li><li>Josephite Math Club (former Joint Secretary)</li><li>Bangladesh National Cadet Corps (former)</li><li>Bangladesh Scouts (former)</li><li>Taekwondo (Black Belt)</li></ul></div></div>
+    <div class="row"><div class="l mono">Academic recognition</div><div>
+      <ul><li>Dean’s List Honor Award, Fall 2024–2025 Semester</li><li>AIUB Academic Scholarship for Regular Students, six consecutive semesters</li></ul></div></div>
+    <div class="row"><div class="l mono">Experiences</div><div><span class="ph">[PLACEHOLDER: internships, jobs, volunteering, workshops]</span></div></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="page" id="p-projects" hidden>
+  <p class="kicker mono">04 — Projects</p>
+  <h2>Projects</h2>
+  <p class="lead">Selected work from my GitHub. <span class="ph">[PLACEHOLDER: project names and descriptions are still needed, see the message in chat]</span></p>
+  <div class="pgrid">
+    <article class="pcard">
+      <!-- To add the project image, replace the div below with: <img src="project1.png" alt="Project 1 screenshot"> inside the .pimg div -->
+      <div class="pimg mono">Project image<br>[PLACEHOLDER: screenshot or photo]</div>
+      <div class="pbody"><span class="n mono">Project 01</span>
+        <h4><span class="ph">[PLACEHOLDER: repository name]</span></h4>
+        <p><b>Summary:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>My role:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Tech stack:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002?tab=repositories" target="_blank" rel="noopener">github.com/NAHIAN-2002</a></p></div>
+    </article>
+    <article class="pcard">
+      <!-- To add the project image, replace the div below with: <img src="project2.png" alt="Project 2 screenshot"> inside the .pimg div -->
+      <div class="pimg mono">Project image<br>[PLACEHOLDER: screenshot or photo]</div>
+      <div class="pbody"><span class="n mono">Project 02</span>
+        <h4><span class="ph">[PLACEHOLDER: repository name]</span></h4>
+        <p><b>Summary:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>My role:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Tech stack:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002?tab=repositories" target="_blank" rel="noopener">github.com/NAHIAN-2002</a></p></div>
+    </article>
+    <article class="pcard">
+      <!-- To add the project image, replace the div below with: <img src="project3.png" alt="Project 3 screenshot"> inside the .pimg div -->
+      <div class="pimg mono">Project image<br>[PLACEHOLDER: screenshot or photo]</div>
+      <div class="pbody"><span class="n mono">Project 03</span>
+        <h4><span class="ph">[PLACEHOLDER: repository name]</span></h4>
+        <p><b>Summary:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>My role:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Tech stack:</b> <span class="ph">[PLACEHOLDER]</span></p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002?tab=repositories" target="_blank" rel="noopener">github.com/NAHIAN-2002</a></p></div>
+    </article>
+  </div>
+  <a class="btn" href="https://github.com/NAHIAN-2002?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub ↗</a>
+</section>
+
+<footer class="mono">© Md. Tahsin Ahmed Niloy · Computer Science and Engineering, AIUB</footer>
+</main>
+
+<script>
+(function(){
+  var pages=['home','resume','skills','projects'];
+  function route(){
+    var h=(location.hash||'').replace('#','');
+    if(pages.indexOf(h)<0)h='home';
+    pages.forEach(function(p){document.getElementById('p-'+p).hidden=(p!==h);});
+    var links=document.querySelectorAll('#nav a');
+    for(var i=0;i<links.length;i++){
+      if(links[i].getAttribute('href')==='#'+h)links[i].setAttribute('aria-current','page');
+      else links[i].removeAttribute('aria-current');
+    }
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route);route();
+  document.getElementById('print').addEventListener('click',function(){try{window.print();}catch(e){}});
+})();
+</script>
+</body>
+</html>
