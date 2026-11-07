@@ -53,7 +53,7 @@ h3{display:inline-block;margin:42px 0 6px;padding:5px 14px;border-radius:999px;b
 .row>.l{color:var(--blue);font-weight:700}
 .row ul{margin:0;padding-left:18px}.row li{margin:4px 0}
 .edu{display:grid;grid-template-columns:76px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
-.logo{width:76px;height:76px;display:block}
+.logo{width:76px;height:76px;display:block;object-fit:contain}
 .logo rect{rx:16px}
 .logo text{font-family:Georgia,serif;font-weight:700}
 .edu:nth-of-type(1) .logo rect{fill:var(--black)}.edu:nth-of-type(1) .logo text{fill:#fff}
@@ -62,11 +62,11 @@ h3{display:inline-block;margin:42px 0 6px;padding:5px 14px;border-radius:999px;b
 .edu h4{margin:0;font-size:1.12rem}
 .edu .d{color:var(--mute);font-size:.94rem}
 .ph{background:var(--pale);color:var(--navy);border:1px dashed var(--blue);border-radius:6px;padding:1px 7px;font-size:.86rem;font-weight:700}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:24px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;margin-top:24px}
 .pcard{background:#fff;border:2px solid var(--black);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.15s}
 .pcard:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--blue)}
-.pimg{aspect-ratio:16/10;background:var(--pale);border-bottom:2px solid var(--black);display:grid;place-content:center;text-align:center;color:var(--blue);padding:12px}
-.pimg img{width:100%;height:100%;object-fit:cover;display:block}
+.pimg{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--pale);border-bottom:2px solid var(--black);display:grid;place-content:center;text-align:center;color:var(--blue);padding:12px}
+.pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .pbody{padding:18px 20px 22px}
 .pbody .n{display:inline-block;background:var(--black);color:#fff;border-radius:999px;padding:2px 12px;font-size:.78rem;margin-bottom:8px}
 .pcard:nth-of-type(2) .n{background:var(--blue)}.pcard:nth-of-type(3) .n{background:var(--sky);color:var(--black)}
@@ -74,7 +74,7 @@ h3{display:inline-block;margin:42px 0 6px;padding:5px 14px;border-radius:999px;b
 .pbody p{margin:4px 0;font-size:.95rem}
 .btn{display:inline-block;margin-top:26px;border-radius:12px;padding:12px 22px;font-weight:700;text-decoration:none;background:var(--blue);color:#fff;border:0;cursor:pointer;font-size:1rem;transition:.15s}
 .btn:hover{background:var(--black)}
-  
+
 .rhead{text-align:center;margin:6px 0 10px}
 .rname{font-family:"Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",serif;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin:0;letter-spacing:.01em;font-weight:700}
 .rloc{margin:8px 0 22px;color:var(--mute);letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
@@ -83,7 +83,7 @@ h3{display:inline-block;margin:42px 0 6px;padding:5px 14px;border-radius:999px;b
 .ricon:hover{background:var(--blue);transform:translateY(-3px)}
 .ricon svg{width:26px;height:26px;fill:currentColor}
 .rhint{margin:14px 0 0;color:var(--mute);font-size:.88rem}
-  
+
 footer{margin-top:60px;color:var(--mute);font-size:.85rem}
 @media (max-width:760px){
   .rib-in{gap:10px;padding:10px 5vw}
@@ -99,7 +99,7 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
 </head>
 <body>
 <header class="ribbon"><div class="rib-in">
-  <div class="brand" href="#home">Md. Tahsin Ahmed Niloy<small>Computer Science and Engineering student, AIUB</small></div>
+  <a class="brand" href="#home" style="color:#fff;text-decoration:none">Md. Tahsin Ahmed Niloy<small>Computer Science and Engineering student, AIUB</small></a>
   <nav id="nav">
     <a href="#home">Home</a>
     <a href="#resume">Resume</a>
@@ -147,7 +147,7 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
 
 <!-- ============ RESUME ============ -->
 <section class="page" id="p-resume" hidden>
-   <div class="rhead">
+  <div class="rhead">
     <h1 class="rname">Md. Tahsin Ahmed Niloy</h1>
     <p class="rloc">Dhaka, Bangladesh</p>
     <div class="rlinks">
@@ -158,66 +158,52 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
     <p class="rhint">Click an icon to visit the respective account</p>
   </div>
   <p class="noprint" style="text-align:center"><button class="btn" id="print" style="margin-top:10px">Save as PDF / Print</button></p>
+
   <h3 class="mono">Education</h3>
-  <!-- LOGOS: to use a real logo, replace each <svg class="logo">…</svg> with <img class="logo" src="aiub-logo.png" alt="AIUB logo"> -->
   <div class="edu">
-    <img class="logo" src="aiub-logo.png" alt="AIUB logo"> 
+    <img class="logo" src="aiub-logo.png" alt="AIUB logo">
     <div><h4>American International University-Bangladesh (AIUB)</h4>
       <div class="d">Bachelor of Science in Computer Science and Engineering · 2023 – Present</div>
       <div>Current CGPA: 3.98/4.00 · Expected graduation: 2027</div></div>
   </div>
   <div class="edu">
-    <img class="logo" src="st-joseph-logo.png" alt="AIUB logo"> 
+    <img class="logo" src="st-joseph-logo.png" alt="St. Joseph Higher Secondary School logo">
     <div><h4>St. Joseph Higher Secondary School</h4>
       <div class="d">Higher Secondary Certificate (Science), Dhaka Board · 2022</div><div>GPA: 5.00</div></div>
   </div>
   <div class="edu">
-    <img class="logo" src="annada-logo.png" alt="AIUB logo"> 
+    <img class="logo" src="annada-logo.png" alt="Annada Government High School logo">
     <div><h4>Annada Government High School, Brahmanbaria</h4>
       <div class="d">Secondary School Certificate (Science), Cumilla Board · 2020</div><div>GPA: 5.00</div></div>
   </div>
 
+  <h3 class="mono">Skills</h3>
+  <div class="row"><div class="l mono">Technical</div><ul>
+    <li>Advanced computer proficiency</li>
+    <li>Proficient in Microsoft Office (Word, Excel, PowerPoint)</li></ul></div>
+  <div class="row"><div class="l mono">Communication</div><ul>
+    <li>Fluent in Bangla and English</li>
+    <li>Excellent verbal and written communication</li></ul></div>
+  <div class="row"><div class="l mono">Teamwork &amp; Leadership</div><ul>
+    <li>Leadership and teamwork</li></ul></div>
+  <div class="row"><div class="l mono">Personal Strengths</div><ul>
+    <li>Strong analytical and problem-solving skills</li>
+    <li>Quick learner with excellent adaptability</li></ul></div>
+
   <h3 class="mono">Achievements</h3>
-  <div class="row"><div class="l mono"></div><ul>
+  <div class="row"><div class="l mono">Awards</div><ul>
     <li>Microsoft Office Specialist (MOS) PowerPoint 2025: University Champion and National Champion</li>
     <li>Dean’s List Honor Award, Fall 2024–2025 Semester</li>
     <li>AIUB Academic Scholarship for Regular Students, six consecutive semesters</li>
     <li>14th place, Intra AIUB Programming Contest 2024 (Junior Category)</li></ul></div>
 
   <h3 class="mono">Leadership &amp; Extracurricular Activities</h3>
-  <div class="row"><div class="l mono"></div><ul>
+  <div class="row"><div class="l mono">Roles</div><ul>
     <li>Organizer, AIUB English Club</li>
     <li>Former Joint Secretary, Josephite Math Club</li>
     <li>Former Cadet, Bangladesh National Cadet Corps (BNCC), Junior Division</li>
     <li>Former Member, Bangladesh Scouts, Junior Level</li>
     <li>Black Belt in Taekwondo</li></ul></div>
-
-  <h3 class="mono">Skills &amp; Activities</h3>
-  <div class="row"><div class="l mono"></div><ul>
-    <li>Fluent in Bangla and English</li>
-    <li>Excellent verbal and written communication</li>
-    <li>Advanced computer proficiency</li>
-    <li>Proficient in Microsoft Office (Word, Excel, PowerPoint)</li>
-    <li>Leadership and teamwork</li>
-    <li>Strong analytical and problem-solving skills</li>
-    <li>Quick learner with excellent adaptability</li>
-    </ul></div>
-
-  <div style="border-top:2px solid var(--rule)">
-    <div class="row"><div class="l mono">Technical</div><div>
-      <ul><li>Advanced computer proficiency</li><li>Microsoft Word, Excel and PowerPoint (MOS PowerPoint 2025 University and National Champion)</li><li>14th place, Intra AIUB Programming Contest 2024 (Junior Category)</li></ul></div></div>
-    <div class="row"><div class="l mono">Communication</div><div>
-      <ul><li>Fluent in Bangla and English</li><li>Excellent verbal and written communication</li><li>Organizer, AIUB English Club</li></ul></div></div>
-    <div class="row"><div class="l mono">Leadership &amp; teamwork</div><div>
-      <ul><li>Organizer, AIUB English Club</li><li>Former Joint Secretary, Josephite Math Club</li><li>Former Cadet, Bangladesh National Cadet Corps (BNCC), Junior Division</li><li>Former Member, Bangladesh Scouts, Junior Level</li></ul></div></div>
-    <div class="row"><div class="l mono">Personal strengths</div><div>
-      <ul><li>Strong analytical and problem-solving skills</li><li>Quick learner with excellent adaptability</li></ul></div></div>
-    <div class="row"><div class="l mono">Co-curricular</div><div>
-      <ul><li>AIUB English Club (Organizer)</li><li>Josephite Math Club (former Joint Secretary)</li><li>Bangladesh National Cadet Corps (former)</li><li>Bangladesh Scouts (former)</li><li>Taekwondo (Black Belt)</li></ul></div></div>
-    <div class="row"><div class="l mono">Academic recognition</div><div>
-      <ul><li>Dean’s List Honor Award, Fall 2024–2025 Semester</li><li>AIUB Academic Scholarship for Regular Students, six consecutive semesters</li></ul></div></div>
-    
-  </div>
 </section>
 
 <!-- ============ PROJECTS ============ -->
@@ -232,183 +218,67 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
 
     <!-- Project 01: HRMS / JobFinder -->
     <article class="pcard">
-
-      <!-- Project image area -->
       <div class="pimg mono">
-        <img src="hrms_jobfinder.png"
-             alt="HRMS / JobFinder project screenshot">
+        <img src="hrms_jobfinder.png" alt="HRMS / JobFinder project screenshot">
       </div>
-
       <div class="pbody">
         <span class="n mono">Project 01</span>
-
         <h4>HRMS / JobFinder</h4>
-
-        <p>
-          <b>Summary:</b>
-          A Human Resource Management System and job portal
-          that allows users to search and apply for jobs,
-          employers to manage job postings and applicants,
-          and administrators to manage system activities.
-        </p>
-
-        <p>
-          <b>My role:</b>
-          Developer — worked on application development,
-          database integration, and role-based functionality.
-        </p>
-
-        <p>
-          <b>Tech stack:</b>
-          C#, .NET Windows Forms, SQL Server
-        </p>
-
-        <p>
-          <b>Link:</b>
-          <a href="https://github.com/NAHIAN-2002/HRMS"
-             target="_blank" rel="noopener">
-            View Project on GitHub ↗
-          </a>
-        </p>
+        <p><b>Summary:</b> A Human Resource Management System and job portal that allows users to search and apply for jobs, employers to manage job postings and applicants, and administrators to manage system activities.</p>
+        <p><b>My role:</b> Developer — worked on application development, database integration, and role-based functionality.</p>
+        <p><b>Tech stack:</b> C#, .NET Windows Forms, SQL Server</p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002/HRMS" target="_blank" rel="noopener">View Project on GitHub ↗</a></p>
       </div>
     </article>
-
 
     <!-- Project 02: Car Heads-Up Display -->
     <article class="pcard">
-
-      <!-- Project image area -->
       <div class="pimg mono">
-        <img src="car_heads_up_display.png"
-             alt="Car Heads-Up Display project screenshot">
+        <img src="car_heads_up_display.png" alt="Car Heads-Up Display project screenshot">
       </div>
-
       <div class="pbody">
         <span class="n mono">Project 02</span>
-
         <h4>Car Heads-Up Display</h4>
-
-        <p>
-          <b>Summary:</b>
-          An Android-based Car Heads-Up Display (HUD) project
-          designed to present useful driving-related information
-          through a mobile application interface.
-        </p>
-
-        <p>
-          <b>My role:</b>
-          Developer — contributed to the development of
-          the Android application.
-        </p>
-
-        <p>
-          <b>Tech stack:</b>
-          Android, Kotlin, Gradle
-        </p>
-
-        <p>
-          <b>Link:</b>
-          <a href="https://github.com/NAHIAN-2002/Car-Heads-Up-Display"
-             target="_blank" rel="noopener">
-            View Project on GitHub ↗
-          </a>
-        </p>
+        <p><b>Summary:</b> An Android-based Car Heads-Up Display (HUD) project designed to present useful driving-related information through a mobile application interface.</p>
+        <p><b>My role:</b> Developer — contributed to the development of the Android application.</p>
+        <p><b>Tech stack:</b> Android, Kotlin, Gradle</p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002/Car-Heads-Up-Display" target="_blank" rel="noopener">View Project on GitHub ↗</a></p>
       </div>
     </article>
-
 
     <!-- Project 03: Shop Management System -->
     <article class="pcard">
-
-      <!-- Project image area -->
       <div class="pimg mono">
-        <img src="shop_management_java.png"
-             alt="Shop Management System Java project screenshot">
+        <img src="shop_management_java.png" alt="Shop Management System (Java) project screenshot">
       </div>
-
       <div class="pbody">
         <span class="n mono">Project 03</span>
-
         <h4>Shop Management System (Java)</h4>
-
-        <p>
-          <b>Summary:</b>
-          A Java-based shop management project focused on
-          applying object-oriented programming concepts
-          to a retail management system.
-        </p>
-
-        <p>
-          <b>My role:</b>
-          Developer — worked on the academic project
-          using Java programming concepts.
-        </p>
-
-        <p>
-          <b>Tech stack:</b>
-          Java, Object-Oriented Programming
-        </p>
-
-        <p>
-          <b>Link:</b>
-          <a href="https://github.com/NAHIAN-2002/shop_management_system_java"
-             target="_blank" rel="noopener">
-            View Project on GitHub ↗
-          </a>
-        </p>
+        <p><b>Summary:</b> A Java-based shop management project focused on applying object-oriented programming concepts to a retail management system.</p>
+        <p><b>My role:</b> Developer — worked on the academic project using Java programming concepts.</p>
+        <p><b>Tech stack:</b> Java, Object-Oriented Programming</p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002/shop_management_system_java" target="_blank" rel="noopener">View Project on GitHub ↗</a></p>
       </div>
     </article>
 
-
     <!-- Project 04: C-Sharp Project -->
     <article class="pcard">
-
-      <!-- Project image area -->
       <div class="pimg mono">
-        <img src="csharp_project.png"
-             alt="C-Sharp project screenshot">
+        <img src="csharp_project.png" alt="C-Sharp project screenshot">
       </div>
-
       <div class="pbody">
         <span class="n mono">Project 04</span>
-
         <h4>C-Sharp Project</h4>
-
-        <p>
-          <b>Summary:</b>
-          A C# software development project demonstrating
-          object-oriented programming, application structure,
-          and practical software development concepts.
-        </p>
-
-        <p>
-          <b>My role:</b>
-          Developer — worked on C# application development
-          and implementation of programming concepts.
-        </p>
-
-        <p>
-          <b>Tech stack:</b>
-          C#, .NET, Visual Studio
-        </p>
-
-        <p>
-          <b>Link:</b>
-          <a href="https://github.com/NAHIAN-2002/C-Sharp-Project"
-             target="_blank" rel="noopener">
-            View Project on GitHub ↗
-          </a>
-        </p>
+        <p><b>Summary:</b> A C# software development project demonstrating object-oriented programming, application structure, and practical software development concepts.</p>
+        <p><b>My role:</b> Developer — worked on C# application development and implementation of programming concepts.</p>
+        <p><b>Tech stack:</b> C#, .NET, Visual Studio</p>
+        <p><b>Link:</b> <a href="https://github.com/NAHIAN-2002/C-Sharp-Project" target="_blank" rel="noopener">View Project on GitHub ↗</a></p>
       </div>
     </article>
 
   </div>
 
-  <a class="btn"
-     href="https://github.com/NAHIAN-2002?tab=repositories"
-     target="_blank" rel="noopener">
-    View all repositories on GitHub ↗
-  </a>
+  <a class="btn" href="https://github.com/NAHIAN-2002?tab=repositories" target="_blank" rel="noopener">View all repositories on GitHub ↗</a>
 </section>
 
 <footer class="mono">© Md. Tahsin Ahmed Niloy · Computer Science and Engineering, AIUB</footer>
@@ -416,11 +286,14 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
 
 <script>
 (function(){
-  var pages=['home','resume','skills','projects'];
+  var pages=['home','resume','projects'];
   function route(){
     var h=(location.hash||'').replace('#','');
     if(pages.indexOf(h)<0)h='home';
-    pages.forEach(function(p){document.getElementById('p-'+p).hidden=(p!==h);});
+    pages.forEach(function(p){
+      var el=document.getElementById('p-'+p);
+      if(el)el.hidden=(p!==h);
+    });
     var links=document.querySelectorAll('#nav a');
     for(var i=0;i<links.length;i++){
       if(links[i].getAttribute('href')==='#'+h)links[i].setAttribute('aria-current','page');
@@ -429,7 +302,8 @@ footer{margin-top:60px;color:var(--mute);font-size:.85rem}
     window.scrollTo(0,0);
   }
   window.addEventListener('hashchange',route);route();
-  document.getElementById('print').addEventListener('click',function(){try{window.print();}catch(e){}});
+  var pb=document.getElementById('print');
+  if(pb)pb.addEventListener('click',function(){try{window.print();}catch(e){}});
 })();
 </script>
 </body>
